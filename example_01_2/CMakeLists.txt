@@ -7,10 +7,10 @@ add_subdirectory(hello_lib)
 
 
 ##########
-include(CTest)
+#include(CTest)
 
-add_test(NAME run-dynamic
-         COMMAND hello-bin-dynamic)
+#add_test(NAME run-dynamic
+#         COMMAND hello-bin-dynamic)
 
-add_test(NAME run-static
-         COMMAND hello-bin-static)
+#add_test(NAME run-static
+#         COMMAND hello-bin-static)

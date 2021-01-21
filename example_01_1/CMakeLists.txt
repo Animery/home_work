@@ -10,7 +10,7 @@ install(TARGETS ex_1_hello_world
         ARCHIVE DESTINATION ${CMAKE_CURRENT_LIST_DIR}/../tests/ex01/lib)
 
 ##########
-include(CTest)
+#include(CTest)
 
-add_test(NAME run-dynamic
-         COMMAND hello-bin-dynamic)
+#add_test(NAME run-dynamic
+#         COMMAND hello-bin-dynamic)

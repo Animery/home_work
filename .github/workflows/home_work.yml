@@ -49,9 +49,9 @@ jobs:
     steps:
     
       - name: Git clone our repo
-        uses: |
-            actions/checkout@v1
-            ashutoshvarma/setup-ninja@master
+        uses: actions/checkout@v1
+      - name: Install Ninja
+        uses: ashutoshvarma/setup-ninja@master
         
       - name: build_act
         

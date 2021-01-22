@@ -52,18 +52,25 @@ jobs:
     needs  : [testing]
     
     steps:
-    
-      - name: Git clone our repo
-        uses: actions/checkout@v1
-      - name: Install Ninja
+      - name: Setup Ninja
         uses: ashutoshvarma/setup-ninja@master
+        with:
+          # ninja version to download. Default: 1.10.0
+          version: 1.10.0
+
+      - name: Build with CMake
+        uses: ashutoshvarma/action-cmake-build@master
         with:
           build-dir: ${{ runner.workspace }}/build
           cc: ${{ matrix.config.cc }}
           cxx: ${{ matrix.config.cxx }}
           configure-options: -G Ninja
           build-type: Release
-
+    
+    
+      - name: Git clone our repo
+        uses: actions/checkout@v1
+      
       - name: build_act
         
         run: |
@@ -72,7 +79,7 @@ jobs:
           # cmake -DCMAKE_C_COMPILER=gcc 9 -DCMAKE_CXX_COMPILER=g++ 9 ..
           cmake -G Ninja ..
           cmake --build .
-          make
+          #make
           # Make tests
           ctest 
           # Install

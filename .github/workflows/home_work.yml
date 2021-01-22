@@ -33,9 +33,9 @@ jobs:
         
       - name: Setup Ninja
         uses: ashutoshvarma/setup-ninja@master
-        with:
+        #with:
           # ninja version to download. Default: 1.10.0
-          version: 1.10.0
+          #version: 1.10.0
       #- name: Check Ninja
         #run: ninja --version 
         #run : sudo apt get install ninja-build
@@ -49,7 +49,9 @@ jobs:
     steps:
     
       - name: Git clone our repo
-        uses: actions/checkout@v1
+        uses: |
+           actions/checkout@v1
+           ashutoshvarma/setup-ninja@master
         
       - name: build_act
         

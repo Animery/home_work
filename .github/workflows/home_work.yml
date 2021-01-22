@@ -1,40 +1,32 @@
-name: My_action_home_work
+name: on_Linux_hw
 env:
   APPLICATION_NAME : "myHome_Work"
   DEPLOY_PACKAGE_NAME     : "work-deploy-ver-${{ github.sha }}"
   
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
   push:
     branches: [ master ]
 
 jobs:
-  my_testing:
+  build:
     runs-on : ubuntu-latest
     
     steps:
-      - name: Print Hello Message
-        run : echo "Hello World from testing job"
+      #- name: Git clone our repo
+      # uses: actions/checkout@v1
         
-      - name: Execure few commands
-        run : |
-          echo "Hello Message1"
-          echo "Hello Message2"
-          echo "Application name : ${{ env.APPLICATION_NAME }}"
-          
-      - name: Git clone my repo
-        uses: actions/checkout@v1
-          
-      - name: List current folder
-        run: ls -la
-
-
-  my_deploy:
-    runs-on: ubuntu-latest
-    needs: [my_testing]
-    
-    steps:
-      - name: Print Hello Message
-        run : echo "Hello World from Deploy job"
-      - name: Printing Deployment package
-        run : echo "Deploy package name is ${{ env.DEPLOY_PACKAGE_NAME }}"
+      - name: ECH  
+        run: echo "Hello"
+      # Check OS
+      - name: CheckOS
+        run: uname -a
+      # Check GCC version  
+      - name: CheckGCC
+        run: gcc --version 
+      # Check G++ version  
+      - name: CheckG++
+        run: g++ --version
+      # Check cmake version  
+      - name: CheckCMake
+        run: cmake --version
+            

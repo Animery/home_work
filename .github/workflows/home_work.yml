@@ -12,21 +12,35 @@ jobs:
     runs-on : ubuntu-latest
     
     steps:
-      #- name: Git clone our repo
-      # uses: actions/checkout@v1
         
-      - name: ECH  
-        run: echo "Hello"
-      # Check OS
       - name: CheckOS
         run: uname -a
-      # Check GCC version  
+
       - name: CheckGCC
         run: gcc --version 
-      # Check G++ version  
+       
       - name: CheckG++
         run: g++ --version
-      # Check cmake version  
+        
       - name: CheckCMake
         run: cmake --version
-            
+        
+      - name: Check Ninja
+        run: ninja --version 
+        
+      - name: Git clone our repo
+        uses: actions/checkout@v1
+        
+      - name: build_act
+        
+        run: |
+          mkdir build
+          cd build   
+          # cmake -DCMAKE_C_COMPILER=gcc 9 -DCMAKE_CXX_COMPILER=g++ 9 ..
+          cmake -G Ninja ..
+          cmake --build .
+          make
+          # Make tests
+          ctest 
+          # Install
+          cmake --install .

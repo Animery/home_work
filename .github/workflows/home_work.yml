@@ -5,29 +5,40 @@ env:
   
 on:
   push:
-    branches: [ master ]
+    branches:
+      - master 
+  
 
 jobs:
-  build:
+  testing:
     runs-on : ubuntu-latest
     
     steps:
         
       - name: CheckOS
-        run: uname -a
+        run : uname -a
 
       - name: CheckGCC
-        run: gcc --version 
+        run : gcc --version 
        
       - name: CheckG++
-        run: g++ --version
+        run : g++ --version
         
       - name: CheckCMake
-        run: cmake --version
+        run : cmake --version
         
       - name: Check Ninja
-        run: ninja --version 
+        #run: ninja --version 
+        run : apt get install ninja-build
         
+      
+        
+  build:
+    runs-on: ubuntu-latest
+    needs  : [testing]
+    
+    steps:
+    
       - name: Git clone our repo
         uses: actions/checkout@v1
         

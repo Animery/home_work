@@ -50,8 +50,8 @@ jobs:
     
       - name: Git clone our repo
         uses: |
-           actions/checkout@v1
-           ashutoshvarma/setup-ninja@master
+            actions/checkout@v1
+            ashutoshvarma/setup-ninja@master
         
       - name: build_act
         

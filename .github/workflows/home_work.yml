@@ -32,7 +32,7 @@ jobs:
         run : cmake --version
         
       - name: Setup Ninja
-        uses: ashutoshvarma/setup-ninja@master
+        uses: seanmiddleditch/gha-setup-ninja@master
         #with:
           # ninja version to download. Default: 1.10.0
           #version: 1.10.0
@@ -58,7 +58,7 @@ jobs:
         uses: actions/checkout@v1
         
       - name: Setup Ninja
-        uses: ashutoshvarma/setup-ninja@master
+        uses: seanmiddleditch/gha-setup-ninja@master
         
       - name: build_act
         run: |

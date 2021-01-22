@@ -31,10 +31,13 @@ jobs:
         run : cmake --version
         
       - name: Setup Ninja
-        uses: seanmiddleditch/gha-setup-ninja@master
-          
-      - name: Check Ninja
-        run : ninja --version 
+        run: ninja --version
+        #run : sudo apt-get install ninja-build
+        
+      - name: IF 
+        if: failure()
+        run: sudo apt-get install ninja-build
+        
         
   build:
     runs-on : ${{ matrix.config.os }}
@@ -52,7 +55,6 @@ jobs:
         
       - name: Setup Ninja
         run : sudo apt-get install ninja-build
-        #uses: seanmiddleditch/gha-setup-ninja@master
         
       - name: build_act
         run: |

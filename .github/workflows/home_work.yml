@@ -1,7 +1,4 @@
 name: on_Linux_hw
-env:
-  APPLICATION_NAME : "myHome_Work"
-  DEPLOY_PACKAGE_NAME     : "work-deploy-ver-${{ github.sha }}"
   
 on:
   push:

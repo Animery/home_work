@@ -1,7 +1,7 @@
 Home work from course GD C++
 
 Status of Last Deployment: <br>
-<img src="https://github.com/Animery/testing-actions/workflows/My_action_home_work/badge.svg&branch=master"><br>
+<img src="https://github.com/Animery/home_work/workflows/My_action_home_work/badge.svg&branch=master"><br>
 
 
 

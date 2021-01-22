@@ -36,6 +36,7 @@ jobs:
         #with:
           # ninja version to download. Default: 1.10.0
           #version: 1.10.0
+          
       - name: Check Ninja
         run: ninja --version 
         #run : sudo apt get install ninja-build
@@ -52,27 +53,14 @@ jobs:
     needs  : [testing]
     
     steps:
-      - name: Setup Ninja
-        uses: ashutoshvarma/setup-ninja@master
-        with:
-          # ninja version to download. Default: 1.10.0
-          version: 1.10.0
-
-      - name: Build with CMake
-        uses: ashutoshvarma/action-cmake-build@master
-        with:
-          build-dir: ${{ runner.workspace }}/build
-          cc: ${{ matrix.config.cc }}
-          cxx: ${{ matrix.config.cxx }}
-          configure-options: -G Ninja
-          build-type: Release
-    
     
       - name: Git clone our repo
         uses: actions/checkout@v1
-      
-      - name: build_act
         
+      - name: Setup Ninja
+        uses: ashutoshvarma/setup-ninja@master
+        
+      - name: build_act
         run: |
           mkdir build
           cd build   

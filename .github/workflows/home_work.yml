@@ -11,7 +11,11 @@ on:
 
 jobs:
   testing:
-    runs-on : ubuntu-latest
+    runs-on: ${{ matrix.config.os }}
+    strategy:
+      matrix:
+        config:
+          - { name: "Ubuntu gcc", os: ubuntu-latest, cc: "gcc", cxx: "g++" }
     
     steps:
         
@@ -27,9 +31,14 @@ jobs:
       - name: CheckCMake
         run : cmake --version
         
-      - name: Check Ninja
+      - name: Setup Ninja
+        uses: ashutoshvarma/setup-ninja@master
+        with:
+          # ninja version to download. Default: 1.10.0
+          version: 1.10.0
+      #- name: Check Ninja
         #run: ninja --version 
-        run : sudo apt get install ninja-build
+        #run : sudo apt get install ninja-build
         
       
         

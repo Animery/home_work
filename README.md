@@ -8,7 +8,7 @@ Status of Last Deployment: <br>
 On Fedora linux
 
 ```sh
-$ git clone 
+$ git clone git@github.com:Animery/home_work.git
 $ cmake -G"Makefiles" 
 $ make -j 4
 ```

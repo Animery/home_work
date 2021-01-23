@@ -9,6 +9,8 @@ On Fedora linux
 
 ```sh
 $ git clone git@github.com:Animery/home_work.git
-$ cmake -G"Makefiles" 
-$ make -j 4
+$ mkdir build
+$ cd build
+$ cmake -G Ninja .. 
+$ cmake --build ..
 ```

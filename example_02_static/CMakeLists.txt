@@ -13,7 +13,7 @@ target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
 include(FindPkgConfig)
 pkg_search_module(SDL2 REQUIRED sdl2)
 target_include_directories(${PROJECT_NAME} PRIVATE ${SDL2_INCLUDE_DIRS})
-target_link_libraries(${PROJECT_NAME} PRIVATE ${SDL2_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} PRIVATE ${SDL2_LIBRARIES}/libSDL2.a)
 
 install(TARGETS ${PROJECT_NAME}
         RUNTIME DESTINATION ${CMAKE_CURRENT_LIST_DIR}/../tests/ex02/bin

@@ -1,6 +1,6 @@
 name: on_Linux_hw
   
-on:
+#on:
   push:
     branches:
       - master 

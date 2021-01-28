@@ -1,12 +1,7 @@
 #include <cstdlib>
 #include <iostream>
 
-//#include </usr/local/include/SDL2/SDL_version.h>
-#if __has_include(<SDL_version.h>)
-#include <SDL_version.h>
-#else
 #include <SDL2/SDL_version.h>
-#endif
 
 std::ostream& operator<<(std::ostream& out, const SDL_version& v)
 {

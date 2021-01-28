@@ -6,7 +6,7 @@ target_compile_features(02-sdl-static PUBLIC cxx_std_17)
 
 find_package(SDL2 REQUIRED)
 target_include_directories(02-sdl-static PRIVATE ${SDL2_INCLUDE_DIRS})
-find_library(SDL2_LIB libSDL2.a)
+find_library(SDL2_LIB libSDL2.a libSDL2main.a)
 
 target_link_libraries(02-sdl-static
             ${SDL2_LIB} # full path to libSDL2.a force to staticaly link with it

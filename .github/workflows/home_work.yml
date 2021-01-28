@@ -18,7 +18,7 @@ jobs:
       - name: Setup Ninja
         run : sudo apt-get install ninja-build
         
-      - run : sudo apt-get update
+      #- run : sudo apt-get update
         
       - name: Setup SDL2-dev
         run: sudo apt-get install libsdl2-dev
@@ -26,9 +26,14 @@ jobs:
       #  run: sudo apt-get install libsdl2-2.0
       - name: build_act
         run: |
-          mkdir build
-          cd build   
-          cmake -G Ninja ..
-          cmake --build .
+
+          mkdir -p build
+          cd build
+          cmake -GNinja ..
+          ninja
           ctest 
           cmake --install .
+          ##################
+          cd ../tests/ex02/bin/
+          ./02-sdl-dynamic
+          ./02-sdl-static

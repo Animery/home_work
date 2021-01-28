@@ -1,25 +1,13 @@
 cmake_minimum_required(VERSION 3.16)
 project(02-sdl-static)
 
-add_executable(02-sdl-static main.cpp)
-target_compile_features(02-sdl-static PUBLIC cxx_std_17)
+add_executable(${PROJECT_NAME} main.cpp)
+target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
 
 find_package(SDL2 REQUIRED)
-target_include_directories(02-sdl-static PRIVATE ${SDL2_INCLUDE_DIRS})
-#find_library(SDL2_LIBS libSDL2.a)
+target_link_libraries(${PROJECT_NAME} PRIVATE SDL2::SDL2-static)
 
-target_link_libraries(02-sdl-static PRIVATE SDL2::SDL2-static
-            #${SDL2_LIBS} # full path to libSDL2.a force to staticaly link with it
-                #-Wl,--no-undefined # not compiled on MacOS
-                #-lasound
-                #-lm
-                #-ldl
-                #-lpthread
-                #-lrt
-                #-ldbus-1 -ldl -lm  -pthread -Wl,--no-undefined
-                )
-
-install(TARGETS 02-sdl-static
+install(TARGETS ${PROJECT_NAME}
         RUNTIME DESTINATION ${CMAKE_CURRENT_LIST_DIR}/../tests/ex02/bin
         LIBRARY DESTINATION ${CMAKE_CURRENT_LIST_DIR}/../tests/ex02/lib
         ARCHIVE DESTINATION ${CMAKE_CURRENT_LIST_DIR}/../tests/ex02/lib)

@@ -18,8 +18,8 @@ jobs:
       - name: Setup Ninja
         run : sudo apt-get install ninja-build
         
-      - name: Setup SDL2
-        run: sudo apt-get install libsdl2-2.0
+      #- name: Setup SDL2
+      #  run: sudo apt-get install libsdl2-2.0
       - name: Setup SDL2-dev
         run: sudo apt-get install libsdl2-dev
       - name: build_act

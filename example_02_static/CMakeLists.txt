@@ -14,7 +14,7 @@ target_link_libraries(02-sdl-static
                -lm
                -ldl
                -lpthread
-               #-lrt
+               -lrt
                )
 
 install(TARGETS 02-sdl-static

@@ -11,7 +11,7 @@ find_library(SDL2_LIBS libSDL2.a)
 target_link_libraries(02-sdl-static
             ${SDL2_LIBS} # full path to libSDL2.a force to staticaly link with it
             # -Wl,--no-undefined # not compiled on MacOS
-                -W
+                -lasound
                 -lm
                 -ldl
                 -lpthread

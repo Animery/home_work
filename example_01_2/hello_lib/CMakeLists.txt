@@ -13,7 +13,7 @@ target_include_directories(hello-lib-dynamic PUBLIC
 target_compile_features(hello-lib-dynamic PUBLIC cxx_std_17)
 
 install(TARGETS hello-lib-dynamic hello-lib-static
-        RUNTIME DESTINATION ${CMAKE_CURRENT_LIST_DIR}/../../tests/ex02/bin
-        LIBRARY DESTINATION ${CMAKE_CURRENT_LIST_DIR}/../../tests/ex02/lib
-        ARCHIVE DESTINATION ${CMAKE_CURRENT_LIST_DIR}/../../tests/ex02/lib)
+        RUNTIME DESTINATION ${CMAKE_CURRENT_LIST_DIR}/../../tests/ex01/bin
+        LIBRARY DESTINATION ${CMAKE_CURRENT_LIST_DIR}/../../tests/ex01/lib
+        ARCHIVE DESTINATION ${CMAKE_CURRENT_LIST_DIR}/../../tests/ex01/lib)
 

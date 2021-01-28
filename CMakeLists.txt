@@ -4,6 +4,8 @@ project(home_work CXX)
 
 add_subdirectory(example_01_1)
 add_subdirectory(example_01_2)
+add_subdirectory(example_02_dynamic)
+add_subdirectory(example_02_static)
 
 ##########
 include(CTest)

@@ -15,9 +15,9 @@ target_link_libraries(hello-bin-dynamic LINK_PUBLIC hello-lib-dynamic)
 
 
 install(TARGETS hello-bin-dynamic hello-bin-static
-        RUNTIME DESTINATION ${CMAKE_CURRENT_LIST_DIR}/../../tests/ex02/bin
-        LIBRARY DESTINATION ${CMAKE_CURRENT_LIST_DIR}/../../tests/ex02/lib
-        ARCHIVE DESTINATION ${CMAKE_CURRENT_LIST_DIR}/../../tests/ex02/lib)
+        RUNTIME DESTINATION ${CMAKE_CURRENT_LIST_DIR}/../../tests/ex01/bin
+        LIBRARY DESTINATION ${CMAKE_CURRENT_LIST_DIR}/../../tests/ex01/lib
+        ARCHIVE DESTINATION ${CMAKE_CURRENT_LIST_DIR}/../../tests/ex01/lib)
 
 
 

@@ -1,9 +1,9 @@
 name: on_Linux_hw
   
 #on:
-  push:
-    branches:
-      - master 
+  #push:
+   # branches:
+    #  - master 
 
 jobs:
         

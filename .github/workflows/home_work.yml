@@ -32,7 +32,7 @@ jobs:
 
           mkdir -p build
           cd build
-          cmake -GNinja ..
+          cmake -G Ninja ..
           ninja
           ctest 
           cmake --install .

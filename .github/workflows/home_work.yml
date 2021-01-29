@@ -11,17 +11,21 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    
-      - name: Git clone our repo
-        uses: actions/checkout@v1
+      - name: UPDATE
+        run : sudo apt-get update
         
-      - name: Setup Ninja & 
+      - name: Setup Ninja 
         run : sudo apt-get install ninja-build 
         
       - name: Setup SDL2-dev
-        run: sudo apt install libsdl2-dev
-      #- name: Setup SDL2
-      #  run: sudo apt-get install libsdl2-2.0
+        run : sudo apt install libsdl2-dev
+
+      - name: Setup SDL2
+        run : sudo apt-get install pkgconf
+
+      - name: Git clone our repo
+        uses: actions/checkout@v1
+
       - name: build_act
         run: |
 

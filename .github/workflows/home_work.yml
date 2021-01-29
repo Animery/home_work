@@ -15,8 +15,8 @@ jobs:
       - name: Git clone our repo
         uses: actions/checkout@v1
         
-      - name: Setup Ninja
-        run : sudo apt-get install ninja-build
+      - name: Setup Ninja & 
+        run : sudo apt-get install ninja-build pkgconf
         
       #- run : sudo apt-get update
         

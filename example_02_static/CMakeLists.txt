@@ -4,47 +4,11 @@ project(02-sdl-static)
 add_executable(${PROJECT_NAME} main.cpp)
 target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
 
-FIND_PACKAGE(SDL2 REQUIRED)
-Message("")
-Message( STATUS "FINDING SDL2" )
-IF (${SDL2_FOUND})
-    Message( STATUS "SDL2_FOUND: " ${SDL2_FOUND})
-    Message( STATUS "SDL2_INCLUDE_DIR:" ${SDL2_INCLUDE_DIR})
-    Message( STATUS "SDL2_LIBRARY: " ${SDL2_LIBRARY})
-ELSE()
-    Message( STATUS "SDL2_FOUND: " ${SDL2_FOUND})
-    Message( FATAL_ERROR "SDL2 NOT FOUND" )
-ENDIF()
+find_package(SDL2 REQUIRED)
 
 # The modern way, using cmake config files
-#find_package(SDL2 REQUIRED)
-#if(SDL2_FOUND)
-#        message("yep SDL2_package")     
-#        target_link_libraries(${PROJECT_NAME} PRIVATE SDL2::SDL2-static)
-#
-#        else()
-#        include(FindPkgConfig)
-#        pkg_search_module(SDL2 REQUIRED sdl2)
-#        target_link_libraries(${PROJECT_NAME} PRIVATE SDL2::SDL2-static)
-#endif(SDL2_FOUND)
-       
-#find_library(SDL2_LIB libSDL2.a)
-#target_link_libraries(${PROJECT_NAME} ${SDL2_LIB} 
-#-lSDL2  -Wl,--no-undefined -lm -ldl  -lasound -lm -ldl -lpthread -lpulse-simple -lpulse  -lX11 -lXext -lXcursor -lXinerama -lXi -lXrandr -lXss -lXxf86vm -lwayland-egl -lwayland-client #-lwayl
-#                #-lm
-#                #-ldl
-#                #-ldbus-1
-#                #-Wl,--no-undefined
-#                #-lpthread
-#                )
-
-
-# The trusty old way, using pkg-config
-include(FindPkgConfig)
-pkg_search_module(SDL2 REQUIRED sdl2)
-target_include_directories(${PROJECT_NAME} PRIVATE ${SDL2_INCLUDE_DIRS})
-target_link_libraries(${PROJECT_NAME} PRIVATE ${SDL2_LIBRARIES})
-message("sdl2_lib = " ${SDL2_LIBRARIES})
+find_package(SDL2 REQUIRED)
+target_link_libraries(${PROJECT_NAME} PRIVATE SDL2::SDL2-static)
 
 install(TARGETS ${PROJECT_NAME}
         RUNTIME DESTINATION ${CMAKE_CURRENT_LIST_DIR}/../tests/ex02/bin

@@ -5,7 +5,7 @@ project(02-sdl-dynamic)
 add_executable(${PROJECT_NAME} main.cpp)
 target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
 
-find_package(smessage("SDL2 FOUND")dl2 REQUIRED)
+find_package(SDL2 REQUIRED)
 if(SDL2_FOUND)
         message("SDL2 FOUND")
 endif(SDL2_FOUND)

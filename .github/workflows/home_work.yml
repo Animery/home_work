@@ -15,18 +15,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2.3.4
 
-
       - name: Setup Ninja 
         run: sudo apt update -y && sudo apt install -y ninja-build cmake
-        
-      - name: Setup SDL2
-        run : sudo apt-get install pkgconf
-      - run : pkg-config --version
 
       - name: Setup SDL2-dev
         run : sudo apt-get install libsdl2-dev
-
-
 
       - name: build_act
         run: |

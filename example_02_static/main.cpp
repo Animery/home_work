@@ -23,7 +23,7 @@ int main(int /*argc*/, char* /*argv*/[])
     SDL_version linked   = { 0, 0, 0 };
 
     SDL_VERSION(&linked);
-    // SDL_GetVersion(&compiled);
+    SDL_GetVersion(&compiled);
     
     cout << "second compiled: " << compiled << '\n';
     cout << "second linked: " << linked << endl;

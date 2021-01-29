@@ -4,7 +4,7 @@ project(02-sdl-static)
 add_executable(${PROJECT_NAME} main.cpp)
 target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
 
-find_package(SDL2 REQUIRED)
+find_package(sdl2 REQUIRED)
 target_link_libraries(${PROJECT_NAME} PRIVATE SDL2::SDL2-static)
 
 install(TARGETS ${PROJECT_NAME}

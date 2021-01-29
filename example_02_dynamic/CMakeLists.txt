@@ -5,7 +5,11 @@ project(02-sdl-dynamic)
 add_executable(${PROJECT_NAME} main.cpp)
 target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
 
-find_package(sdl2 REQUIRED)
+find_package(smessage("SDL2 FOUND")dl2 REQUIRED)
+if(SDL2_FOUND)
+        message("SDL2 FOUND")
+endif(SDL2_FOUND)
+
 target_link_libraries(${PROJECT_NAME} PRIVATE SDL2::SDL2)
 
 install(TARGETS ${PROJECT_NAME}

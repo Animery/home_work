@@ -18,7 +18,7 @@ jobs:
       - name: Setup Ninja & 
         run : sudo apt-get install ninja-build 
 
-      - run : sudo apt-get pkgconf
+      - run : sudo apt-get install pkgconf
       - run : pkgconf --version
         
       - name: Setup SDL2-dev

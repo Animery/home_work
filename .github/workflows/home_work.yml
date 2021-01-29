@@ -8,7 +8,7 @@ on:
 jobs:
         
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
         
     steps:
 
@@ -19,7 +19,7 @@ jobs:
         run: sudo apt update -y && sudo apt install -y ninja-build cmake
 
       - name: Setup SDL2-dev
-        run : sudo apt-get install libsdl2-dev
+        run : sudo apt-get install -y libsdl2-dev && sudo apt-get install -y libsdl2-2.0-0
 
       - name: build_act
         run: |

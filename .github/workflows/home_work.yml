@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: UPDATE
         run : sudo apt-get update
+
+      - run : pkg-config --version
         
       - name: Setup Ninja 
         run : sudo apt-get install ninja-build 
@@ -22,6 +24,8 @@ jobs:
 
       - name: Setup SDL2
         run : sudo apt-get install pkgconf
+
+      - run : pkg-config --version
 
       - name: Git clone our repo
         uses: actions/checkout@v1

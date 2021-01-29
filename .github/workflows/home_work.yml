@@ -27,7 +27,7 @@ jobs:
           mkdir -p build
           cd build
           cmake -G Ninja ..
-          ninja
+          cmake --build .
           ctest 
           cmake --install .
           ##################

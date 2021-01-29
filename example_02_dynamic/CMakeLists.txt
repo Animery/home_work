@@ -14,12 +14,8 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 ${SDL2_CFLAGS_INCLUDE} ${SDL2
 find_package(SDL2 REQUIRED)
 
 add_executable(${PROJECT_NAME} main.cpp)
-target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
+#target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
 
-#add pathes to include files
-target_include_directories(${PROJECT_NAME} 
-	PRIVATE ${SDL2_INCLUDE_DIRS} #SDL headers
-)
 
 install(TARGETS ${PROJECT_NAME}
         RUNTIME DESTINATION ${CMAKE_CURRENT_LIST_DIR}/../tests/ex02/bin

@@ -19,11 +19,12 @@ target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
        
 find_library(SDL2_LIB libSDL2.a)
 target_link_libraries(${PROJECT_NAME} ${SDL2_LIB} 
-                -lm
-                -ldl
-                -ldbus-1
-                -Wl,--no-undefined
-                -lpthread
+-lSDL2  -Wl,--no-undefined -lm -ldl  -lasound -lm -ldl -lpthread -lpulse-simple -lpulse  -lX11 -lXext -lXcursor -lXinerama -lXi -lXrandr -lXss -lXxf86vm -lwayland-egl -lwayland-client -lwayl
+                #-lm
+                #-ldl
+                #-ldbus-1
+                #-Wl,--no-undefined
+                #-lpthread
                 )
 
 

@@ -12,8 +12,9 @@ jobs:
         
     steps:
 
-      - name: Git clone our repo
-        uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2.3.4
+
 
       - name: Setup Ninja 
         run: sudo apt update -y && sudo apt install -y ninja-build cmake
@@ -33,10 +34,10 @@ jobs:
           mkdir -p build
           cd build
           cmake -G Ninja ..
-          ninja
-          ctest 
-          cmake --install .
-          ##################
-          cd ../tests/ex02/bin/
-          ./02-sdl-dynamic
-          ./02-sdl-static
+          #ninja
+          #ctest 
+          #cmake --install .
+          ###################
+          #cd ../tests/ex02/bin/
+          #./02-sdl-dynamic
+          #./02-sdl-static

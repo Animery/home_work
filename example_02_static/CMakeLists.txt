@@ -6,17 +6,26 @@ target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
 
 
 # The modern way, using cmake config files
-find_package(SDL2 REQUIRED)
-if(SDL2_FOUND)
-        message("yep SDL2_package")     
-        target_link_libraries(${PROJECT_NAME} PRIVATE SDL2::SDL2-static)
+#find_package(SDL2 REQUIRED)
+#if(SDL2_FOUND)
+#        message("yep SDL2_package")     
+#        target_link_libraries(${PROJECT_NAME} PRIVATE SDL2::SDL2-static)
+#
+#        else()
+#        include(FindPkgConfig)
+#        pkg_search_module(SDL2 REQUIRED sdl2)
+#        target_link_libraries(${PROJECT_NAME} PRIVATE SDL2::SDL2-static)
+#endif(SDL2_FOUND)
+       
+find_library(SDL2_LIB libSDL2.a)
+target_link_libraries(${PROJECT_NAME} ${SDL2_LIB} 
+                -lm
+                -ldl
+                -ldbus-1
+                -Wl,--no-undefined
+                -lpthread
+                )
 
-        else()
-        include(FindPkgConfig)
-        pkg_search_module(SDL2 REQUIRED sdl2)
-        target_link_libraries(${PROJECT_NAME} PRIVATE SDL2::SDL2-static)
-endif(SDL2_FOUND)
-                
 
 # The trusty old way, using pkg-config
 #include(FindPkgConfig)

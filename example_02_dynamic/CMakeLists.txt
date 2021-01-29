@@ -11,6 +11,7 @@ message("SDL2_CFLAGS_LIBS=${SDL2_CFLAGS_LIBS}; CMD_RES=${CMD_RES}; ERR_VAR=${ERR
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 ${SDL2_CFLAGS_INCLUDE} ${SDL2_CFLAGS_LIBS}")
 
+
 find_package(SDL2 REQUIRED)
 
 add_executable(${PROJECT_NAME} main.cpp)

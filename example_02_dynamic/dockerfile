@@ -1,11 +1,5 @@
-FROM ubuntu:latest
+FROM fedora:latest
 
-WORKDIR /homework_build
-
-RUN apt-get update -y && apt-get install -y build-essential cmake ninja-build
-
-COPY . .
-
-RUN ls -1a && \
-    mkdir 01_1/build && \
-    cmake -G Ninja -S 01_1 -B 01_1/build
+RUN dnf update -y
+RUN dnf upgrade -y
+RUN dnf install -y gcc-c++ make cmake mingw64-gcc mingw64-gcc-c++ clang wine git SDL2-devel SDL2-static mingw64-SDL2 mingw64-SDL2-static libstdc++-static glibc-static ninja-build

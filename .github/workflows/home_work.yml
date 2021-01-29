@@ -38,7 +38,5 @@ jobs:
           cmake --install .
           ##################
           cd ../tests/ex02/bin/
-          pwd
-          ls
           ./02-sdl-dynamic
           ./02-sdl-static

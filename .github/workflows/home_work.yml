@@ -27,10 +27,10 @@ jobs:
           mkdir -p build
           cd build
           cmake -G Ninja ..
-          #ninja
-          #ctest 
-          #cmake --install .
-          ###################
-          #cd ../tests/ex02/bin/
-          #./02-sdl-dynamic
-          #./02-sdl-static
+          ninja
+          ctest 
+          cmake --install .
+          ##################
+          cd ../tests/ex02/bin/
+          ./02-sdl-dynamic
+          ./02-sdl-static

@@ -48,7 +48,6 @@ target_link_libraries(
         -lasound
         -lpulse-simple
         -lpulse
-        -lsndio
         )
 
 install(TARGETS ${PROJECT_NAME}

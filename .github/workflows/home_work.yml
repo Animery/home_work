@@ -27,8 +27,8 @@ jobs:
           mkdir -p build
           cd build
           cmake -G Ninja ..
-          cd /usr/include/SDL2
-          ls -la
+          #cd /usr/include/SDL2
+          #ls -la
           cmake --build .
           ctest 
           cmake --install .

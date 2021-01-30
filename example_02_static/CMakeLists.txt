@@ -1,6 +1,11 @@
 cmake_minimum_required(VERSION 3.16)
 project(02-sdl-static)
 
+find_package(SDL2 REQUIRED)
+if(SDL2_FOUND)
+        message("SDL2_FOUND")
+endif()
+
 execute_process(COMMAND sdl2-config --cflags RESULT_VARIABLE CMD_RES OUTPUT_VARIABLE SDL2_CFLAGS_INCLUDE ERROR_VARIABLE ERR_VAR OUTPUT_STRIP_TRAILING_WHITESPACE)
 execute_process(COMMAND sdl2-config --static-libs RESULT_VARIABLE CMD_RES OUTPUT_VARIABLE SDL2_CFLAGS_LIBS ERROR_VARIABLE ERR_VAR OUTPUT_STRIP_TRAILING_WHITESPACE)
 
@@ -9,7 +14,6 @@ message("SDL2_CFLAGS_LIBS=${SDL2_CFLAGS_LIBS}; CMD_RES=${CMD_RES}; ERR_VAR=${ERR
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 ${SDL2_CFLAGS_INCLUDE} ${SDL2_CFLAGS_LIBS}")
 
-find_package(SDL2 REQUIRED)
 
 add_executable(${PROJECT_NAME} main.cpp)
 #target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)

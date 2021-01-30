@@ -27,12 +27,12 @@ jobs:
           mkdir -p build
           cd build
           cmake -G Ninja ..
+          #cmake --build .
+          #ctest 
+          #cmake --install .
+          ###################
+          #cd ../tests/ex02/bin/
+          #./02-sdl-dynamic
+          #./02-sdl-static
           #cd /usr/include/SDL2
           #ls -la
-          cmake --build .
-          ctest 
-          cmake --install .
-          ##################
-          cd ../tests/ex02/bin/
-          ./02-sdl-dynamic
-          ./02-sdl-static
